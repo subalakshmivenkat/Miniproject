@@ -1,0 +1,82 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+}
+
+.navbar {
+    padding: 15px;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h2 {
+    color: #007bff;
+}
+
+.advanced-search-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.advanced-search-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.college-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.college-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.college-item h3 {
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.college-item p {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 15px 0;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.rating {
+    margin-top: 20px;
+}
+
+.rating span {
+    font-size: 1.5em;
+    cursor: pointer;
+}

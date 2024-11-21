@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Colleges in Chennai</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Top Colleges in Chennai</h1>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search colleges..." onkeyup="searchColleges()">
+        <button onclick="searchColleges()">Search</button>
+    </div>
+
+    <!-- Colleges List -->
+    <div class="colleges-list" id="collegesList">
+        <div class="college-card">
+            <a href="college-details.html?college=iit-madras">
+                <h3>Indian Institute of Technology (IIT) Madras</h3>
+                <p>Location: IIT P.O., Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="college-details.html?college=anna-university">
+                <h3>Anna University</h3>
+                <p>Location: Kotturpuram, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="college-details.html?college=vit-university">
+                <h3>VIT University Chennai</h3>
+                <p>Location: VIT, Vandalur, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="college-details.html?college=srm-university">
+                <h3>SRM Institute of Science and Technology</h3>
+                <p>Location: Kattankulathur, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="college-details.html?college=mcc">
+                <h3>Madras Christian College</h3>
+                <p>Location: Tambaram, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="college-details.html?college=hindustan-university">
+                <h3>Hindustan Institute of Technology and Science</h3>
+                <p>Location: Old Mahabalipuram Road, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 College Quest. All rights reserved.
+    </footer>
+
+    <script>
+        function searchColleges() {
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            const colleges = document.getElementsByClassName("college-card");
+
+            Array.from(colleges).forEach((college) => {
+                const collegeName = college.getElementsByTagName("h3")[0].textContent.toLowerCase();
+                if (collegeName.includes(searchQuery)) {
+                    college.style.display = "block";
+                } else {
+                    college.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

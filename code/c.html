@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Colleges in Chennai</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #28527c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Search Bar Styling */
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 1px solid #103b69;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #22446a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Colleges List Styling */
+        .colleges-list {
+            margin: 30px auto;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .college-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .college-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .college-card h3 {
+            color: #09335f;
+            margin-bottom: 10px;
+        }
+
+        .college-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #215d9e;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Top Colleges in Chennai</h1>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search colleges..." onkeyup="searchColleges()">
+        <button onclick="searchColleges()">Search</button>
+    </div>
+
+    <!-- Colleges List -->
+    <div class="colleges-list" id="collegesList">
+        <a href="iit.html" class="college-card">
+            <h3>Indian Institute of Technology (IIT) Madras</h3>
+            <p>Location: IIT P.O., Chennai, Tamil Nadu</p>
+        </a>
+        <div class="college-card" onclick="showCollegeDetail('anna-university')">
+            <h3>Anna University</h3>
+            <p>Location: Kotturpuram, Chennai, Tamil Nadu</p>
+        </div>
+        <div class="college-card" onclick="showCollegeDetail('vit-university')">
+            <h3>VIT University Chennai</h3>
+            <p>Location: VIT, Vandalur, Chennai, Tamil Nadu</p>
+        </div>
+        <div class="college-card" onclick="showCollegeDetail('srm-university')">
+            <h3>SRM Institute of Science and Technology</h3>
+            <p>Location: Kattankulathur, Chennai, Tamil Nadu</p>
+        </div>
+        <div class="college-card" onclick="showCollegeDetail('mcc')">
+            <h3>Madras Christian College</h3>
+            <p>Location: Tambaram, Chennai, Tamil Nadu</p>
+        </div>
+        <div class="college-card" onclick="showCollegeDetail('hindustan-university')">
+            <h3>Hindustan Institute of Technology and Science</h3>
+            <p>Location: Old Mahabalipuram Road, Chennai, Tamil Nadu</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 College Quest. All rights reserved.
+    </footer>
+
+    <script>
+        function searchColleges() {
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            const colleges = document.getElementsByClassName("college-card");
+
+            Array.from(colleges).forEach((college) => {
+                const collegeName = college.getElementsByTagName("h3")[0].textContent.toLowerCase();
+                if (collegeName.includes(searchQuery)) {
+                    college.style.display = "block";
+                } else {
+                    college.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

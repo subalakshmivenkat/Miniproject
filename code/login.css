@@ -57,7 +57,7 @@ h2 {
 /* Button Styles */
 button {
     padding: 12px;
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #303f9f; /* Bootstrap primary color */
     color: white;
     border: none;
     border-radius: 4px;
@@ -66,7 +66,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #303f9f; /* Darker shade on hover */
 }
 
 /* Message Display Styles */

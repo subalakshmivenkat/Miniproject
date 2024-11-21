@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #48709b;
     color: white;
     padding: 15px 0;
 }
@@ -26,7 +26,7 @@ header {
 }
 
 h2 {
-    color: #007bff;
+    color: #447ab4;
 }
 
 .advanced-search-form {
@@ -55,7 +55,7 @@ h2 {
 
 .college-item h3 {
     margin-bottom: 5px;
-    color: #007bff;
+    color: #183656;
 }
 
 .college-item p {
@@ -68,8 +68,8 @@ footer {
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #1b3f66;
+    border-color: #1f4e80;
 }
 
 .rating {

@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                 loginMessage.style.color = 'green';
                 // Simulate redirecting (e.g., to dashboard)
                 setTimeout(() => {
-                    window.location.href = 'dashboard.html'; // Change this to your target page
+                    window.location.href = 'home.html'; // Change this to your target page
                 }, 2000);
             } else {
                 loginMessage.textContent = response.message;

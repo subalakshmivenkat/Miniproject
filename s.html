@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Comparison Tool</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <header>
+        <h1>College Comparison Tool</h1>
+    </header>
+    <main>
+        <section id="comparison-section">
+            <h2>Select Colleges to Compare</h2>
+            <div id="college-selection">
+                <select id="college1">
+                    <option value="" disabled selected>Select College 1</option>
+                    <option value="IIT Madras">Indian Institute of Technology Madras (IIT Madras)</option>
+                    <option value="Anna University">Anna University</option>
+                    <option value="SRMIST">SRM Institute of Science and Technology (SRMIST)</option>
+                    <option value="SSN College">SSN College of Engineering</option>
+                    <option value="Sathyabama University">Sathyabama Institute of Science and Technology</option>
+                </select>
+                <select id="college2">
+                    <option value="" disabled selected>Select College 2</option>
+                    <option value="IIT Madras">Indian Institute of Technology Madras (IIT Madras)</option>
+                    <option value="Anna University">Anna University</option>
+                    <option value="SRMIST">SRM Institute of Science and Technology (SRMIST)</option>
+                    <option value="SSN College">SSN College of Engineering</option>
+                    <option value="Sathyabama University">Sathyabama Institute of Science and Technology</option>
+                </select>
+                <button id="compare-btn">Compare</button>
+            </div>
+            <div id="comparison-result" class="hidden">
+                <h3>Comparison Result</h3>
+                <table id="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th id="college1-name"></th>
+                            <th id="college2-name"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tuition Fees</td>
+                            <td id="tuition-college1"></td>
+                            <td id="tuition-college2"></td>
+                        </tr>
+                        <tr>
+                            <td>Programs Offered</td>
+                            <td id="programs-college1"></td>
+                            <td id="programs-college2"></td>
+                        </tr>
+                        <tr>
+                            <td>Campus Facilities</td>
+                            <td id="facilities-college1"></td>
+                            <td id="facilities-college2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 CollegeQuest. All rights reserved.</p>
+    </footer>
+    <script src="s.js"></script>
+</body>
+</html>

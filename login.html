@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeQuest Login</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to external CSS -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>CollegeQuest Login</h1>
+        <p>Please log in to continue</p>
+    </header>
+
+    <!-- Login Form Section -->
+    <section id="login-section">
+        <h2>Login to Your Account</h2>
+        <form id="loginForm" class="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Message Display for Errors or Success -->
+        <div id="loginMessage" class="message">
+            <!-- Error or success messages will be displayed here dynamically using JS -->
+        </div>
+
+        <!-- Link to Registration -->
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </section>
+
+    <!-- Link to JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Similar styling from previous examples */
+        .college-detail {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .college-detail img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .college-detail h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College Details</h1>
+    </header>
+
+    <div id="collegeDetail" class="college-detail">
+        <!-- Content will be injected by JavaScript -->
+    </div>
+
+    <footer>
+        &copy; 2024 College Quest. All rights reserved.
+    </footer>
+
+    <script>
+        // Extract the query parameter from the URL to identify the college
+        const urlParams = new URLSearchParams(window.location.search);
+        const collegeName = urlParams.get('college');
+
+        const collegeData = {
+            'iit-madras': {
+                name: 'Indian Institute of Technology (IIT) Madras',
+                location: 'IIT P.O., Chennai, Tamil Nadu',
+                description: 'IIT Madras is one of India\'s premier engineering institutions...',
+                image: 'iit-madras.jpg',
+            },
+            'anna-university': {
+                name: 'Anna University',
+                location: 'Kotturpuram, Chennai, Tamil Nadu',
+                description: 'Anna University is a major technical university...',
+                image: 'anna-university.jpg',
+            },
+            'vit-university': {
+                name: 'VIT University Chennai',
+                location: 'VIT, Vandalur, Chennai, Tamil Nadu',
+                description: 'VIT University Chennai is known for its innovative teaching methodologies...',
+                image: 'vit-university.jpg',
+            },
+            'srm-university': {
+                name: 'SRM Institute of Science and Technology',
+                location: 'Kattankulathur, Chennai, Tamil Nadu',
+                description: 'SRM Institute offers a variety of undergraduate and postgraduate programs...',
+                image: 'srm-university.jpg',
+            },
+            'mcc': {
+                name: 'Madras Christian College',
+                location: 'Tambaram, Chennai, Tamil Nadu',
+                description: 'Madras Christian College is one of the oldest in Chennai...',
+                image: 'mcc.jpg',
+            },
+            'hindustan-university': {
+                name: 'Hindustan Institute of Technology and Science',
+                location: 'Old Mahabalipuram Road, Chennai, Tamil Nadu',
+                description: 'Hindustan Institute of Technology and Science offers a wide array of programs...',
+                image: 'hindustan-university.jpg',
+            }
+        };
+
+        // Display the college details dynamically based on the selected college
+        const college = collegeData[collegeName];
+        if (college) {
+            document.getElementById('collegeDetail').innerHTML = `
+                <h2>${college.name}</h2>
+                <img src="${college.image}" alt="${college.name}">
+                <p><strong>Location:</strong> ${college.location}</p>
+                <p><strong>Description:</strong> ${college.description}</p>
+            `;
+        } else {
+            document.getElementById('collegeDetail').innerHTML = '<p>College not found.</p>';
+        }
+    </script>
+</body>
+</html>

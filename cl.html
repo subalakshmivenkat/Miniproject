@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Engineering Colleges in Chennai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Top Engineering Colleges in Chennai</h1>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search colleges..." onkeyup="searchColleges()">
+        <button onclick="searchColleges()">Search</button>
+    </div>
+
+    <!-- Colleges List -->
+    <div class="colleges-list" id="collegesList">
+        <div class="college-card">
+            <a href="iit.html">
+                <h3>Indian Institute of Technology (IIT) Madras</h3>
+                <p>Location: Adyar, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="anna.html">
+                <h3>Anna University</h3>
+                <p>Location: Guindy, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="srm.html">
+                <h3>SRM Institute of Science and Technology</h3>
+                <p>Location: Kattankulathur, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="vit.html">
+                <h3>VIT University Chennai</h3>
+                <p>Location: Vandalur-Kelambakkam Road, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="sath.html">
+                <h3>Sathyabama Institute of Science and Technology</h3>
+                <p>Location: Sholinganallur, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="hin.html">
+                <h3>Hindustan Institute of Technology and Science</h3>
+                <p>Location: Padur, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="vell.html">
+                <h3>Velammal Engineering College</h3>
+                <p>Location: Ambattur-Red Hills Road, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="stj.html">
+                <h3>St. Joseph's College of Engineering</h3>
+                <p>Location: Old Mahabalipuram Road, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="raj.html">
+                <h3>Rajalakshmi Engineering College</h3>
+                <p>Location: Thandalam, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="ceg.html">
+                <h3>College of Engineering, Guindy (CEG)</h3>
+                <p>Location: Anna University Campus, Guindy, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="sav.html">
+                <h3>Saveetha Engineering College</h3>
+                <p>Location: Thandalam, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="pan.html">
+                <h3>Panimalar Engineering College</h3>
+                <p>Location: Poonamallee, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="vel.html">
+                <h3>Vel Tech Multi Tech Dr. Rangarajan Dr. Sakunthala Engineering College</h3>
+                <p>Location: Avadi, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="men.html">
+                <h3>Meenakshi Sundararajan Engineering College</h3>
+                <p>Location: Kodambakkam, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="loy.html">
+                <h3>Loyola-ICAM College of Engineering and Technology (LICET)</h3>
+                <p>Location: Nungambakkam, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        
+        <div class="college-card">
+            <a href="agni.html">
+                <h3>Agni College of Technology</h3>
+                <p>Location: Thalambur, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+        <div class="college-card">
+            <a href="sa.html">
+                <h3>SA Engineering College</h3>
+                <p>Location: Thiruverkadu, Chennai, Tamil Nadu</p>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 College Quest. All rights reserved.
+    </footer>
+
+    <script>
+        function searchColleges() {
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            const collegeCards = document.querySelectorAll(".college-card");
+            
+            collegeCards.forEach(card => {
+                const collegeName = card.querySelector("h3").textContent.toLowerCase();
+                if (collegeName.includes(searchQuery)) {
+                    card.style.display = "block"; // Show matching colleges
+                } else {
+                    card.style.display = "none"; // Hide non-matching colleges
+                }
+            });
+        }
+    </script>
+</body>
+</html>

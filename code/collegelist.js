@@ -1,47 +1,45 @@
 // src/components/CollegeList.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const CollegeList = ({ colleges }) => {
-    const [selectedColleges, setSelectedColleges] = useState([]);
+const CollegesList = () => {
+  // State to hold the colleges data
+  const [colleges, setColleges] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    const toggleCollege = (college) => {
-        if (selectedColleges.includes(college)) {
-            setSelectedColleges(selectedColleges.filter(c => c.id !== college.id));
-        } else {
-            setSelectedColleges([...selectedColleges, college]);
-        }
-    };
+  useEffect(() => {
+    // Fetch data from the backend
+    fetch('http://localhost:5000/api/colleges')
+      .then(response => response.json())
+      .then(data => {
+        setColleges(data); // Update state with fetched data
+        setLoading(false);  // Set loading to false
+      })
+      .catch(err => {
+        setError(err);       // Set error if fetch fails
+        setLoading(false);   // Set loading to false
+      });
+  }, []); // Empty dependency array means this runs once on component mount
 
-    return (
-        <div className="college-list">
-            <h2>Compare Colleges</h2>
-            {selectedColleges.length > 0 && (
-                <div className="compare-section">
-                    {selectedColleges.map(college => (
-                        <div key={college.id}>
-                            <h3>{college.name}</h3>
-                            <p>Location: {college.city}</p>
-                            <p>Fees: {college.fees}</p>
-                            <p>Ranking: {college.ranking}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
+  if (loading) return <div>Loading...</div>; // Show loading message
+  if (error) return <div>Error: {error.message}</div>; // Show error message
 
-            <h2>College List</h2>
-            {colleges.map((college) => (
-                <div key={college.id} className="college-item">
-                    <h3>{college.name}</h3>
-                    <p>{college.city}</p>
-                    <p>{college.course}</p>
-                    <p>Fees: {college.fees}</p>
-                    <button onClick={() => toggleCollege(college)}>
-                        {selectedColleges.includes(college) ? "Remove" : "Compare"}
-                    </button>
-                </div>
-            ))}
-        </div>
-    );
+  return (
+    <div>
+      <h2>List of Colleges</h2>
+      <ul>
+        {colleges.map(college => (
+          <li key={college._id}>
+            <h3>{college.name}</h3>
+            <p>{college.location}</p>
+            <p>Rankings: {college.rankings}</p>
+            <p>Fees: {college.fees}</p>
+            <p>Facilities: {college.facilities.join(', ')}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-export default CollegeList;
+export default CollegesList;
